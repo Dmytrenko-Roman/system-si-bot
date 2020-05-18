@@ -1,0 +1,15 @@
+{
+  "name": "si",
+  "version": "1.0.0",
+  "description": "",
+  "main": "SIsystem.js",
+  "scripts": {
+    "start": "node ./main/index.js",
+    "dev": "nodemon ./main/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.40.0"
+  }
+}
