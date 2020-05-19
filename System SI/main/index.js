@@ -8,7 +8,7 @@ let u;
 
 const SI = require('./SIsystem.js')
 
-const TOKEN = '1187295605:AAEmlpv3-6xW_jfmXD4ViepNe3kTzBo_DR4';
+const TOKEN = 'tsssssssssssss';
 
 const bot = new TelegramBot(TOKEN, {
   polling: true
