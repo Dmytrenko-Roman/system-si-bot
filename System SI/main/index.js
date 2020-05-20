@@ -1,22 +1,26 @@
 const TelegramBot = require('node-telegram-bot-api');
 
-let active = false;
+let activeSI = false;
+let active_constants = false;
 let number = 0;
 let units = 0;
 let n;
 let u;
 
 const SI = require('./SIsystem.js')
+const constants = require('./constants.js')
 
-const TOKEN = 'tsssssssssssss';
+const TOKEN = 'tsssss';
 
 const bot = new TelegramBot(TOKEN, {
   polling: true
 });
 
+// S-Y-S-T-E-M-S-I:
+
 bot.onText(/\/systemsi/, (msg) => {
   const chatId = msg.chat.id;
-  active = true;
+  activeSI = true;
   bot.sendMessage(chatId, 'Enter a value:');
 })
 
@@ -25,7 +29,7 @@ let given = {};
 bot.on('message', (msg) => {
 
   const chatId = msg.chat.id;
-  if (active) {
+  if (activeSI) {
     let arr = []; 
     if (number) {
       units = msg;
@@ -36,7 +40,7 @@ bot.on('message', (msg) => {
       const givenSI = SI(given);
       answer_number = givenSI.A[0];
       answer_units = givenSI.A[1];
-      active = false;
+      activeSI = false;
       number = 0;
       units = 0;
       bot.sendMessage(chatId, 'Result: '+answer_number+' '+answer_units);
@@ -49,3 +53,24 @@ bot.on('message', (msg) => {
     console.log(given);
   }
 });
+
+// C-O-N-S-T-A-N-T-S:
+
+bot.onText(/\/constants/, (msg) => {
+  const chatId = msg.chat.id;
+  active_constants = true;
+  bot.sendMessage(chatId, 'Enter a constant:');
+});
+
+
+bot.on('message', (msg) => {
+
+  const chatId = msg.chat.id;
+
+  if (active_constants) {
+    let c = constants(msg.text);
+    bot.sendMessage(chatId, c);
+    active_constants = false;
+  }
+})
+
