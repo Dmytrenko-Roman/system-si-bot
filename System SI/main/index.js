@@ -7,10 +7,11 @@ let units = 0;
 let n;
 let u;
 
-const SI = require('./SIsystem.js')
-const constants = require('./constants.js')
+const SI = require('./SIsystem.js');
+const constants = require('./constants.js');
+const text = require('./text.js');
 
-const TOKEN = 'tsssss';
+const TOKEN = 'tsssssssssssssssssss';
 
 const bot = new TelegramBot(TOKEN, {
   polling: true
@@ -72,5 +73,13 @@ bot.on('message', (msg) => {
     bot.sendMessage(chatId, c);
     active_constants = false;
   }
-})
+});
+
+// I-N-S-T-R-U-C-T-I-O-N-S:
+
+bot.onText(/\/instructions/, (msg) => {
+  const chatId = msg.chat.id;
+
+  bot.sendMessage(chatId, text);
+});
 
