@@ -1,42 +1,42 @@
 'use strict';
 
-const constants = { 
-    
-  'Na': 'Avogadro constant: 6.022×10⁻²³ (1/Mol)',
+const constants = {
 
-  'k': 'Bolzmann constant: 1.38×10⁻²³ (J/K)',
+  Na: 'Avogadro constant: 6.022×10⁻²³ (1/Mol)',
 
-  'e': 'Elementary charge: 1.602×10⁻¹⁹ (C)',
+  k: 'Bolzmann constant: 1.38×10⁻²³ (J/K)',
 
-  'G': 'Newtonian constant of gravitation: 6.67×10⁻¹¹ (m³/kg×s²)',
+  e: 'Elementary charge: 1.602×10⁻¹⁹ (C)',
 
-  'h': 'Planck constant: 6.626×10⁻³⁴ (J×s)',
+  G: 'Newtonian constant of gravitation: 6.67×10⁻¹¹ (m³/kg×s²)',
 
-  'c': 'Speed of light in vacuum: 3×10⁸ (m/s)',
+  h: 'Planck constant: 6.626×10⁻³⁴ (J×s)',
 
-  'ε0': 'Vacuum electric permittivity: 8.854×10⁻¹² (F/m)',
+  c: 'Speed of light in vacuum: 3×10⁸ (m/s)',
 
-  'μ0': 'Vacuum magnetic permeability: 1.256×10⁻⁶ (N/A²)',
+  ε0: 'Vacuum electric permittivity: 8.854×10⁻¹² (F/m)',
 
-  'me': 'Electron mass: 9.1×10⁻³¹ (kg)',
+  μ0: 'Vacuum magnetic permeability: 1.256×10⁻⁶ (N/A²)',
 
-  'mp': 'Proton mass: 1.672×10⁻²⁷ (kg)',
+  me: 'Electron mass: 9.1×10⁻³¹ (kg)',
 
-  'KJ': 'Josephson constant: 483597.84×10⁹ (Hz/V)',
+  mp: 'Proton mass: 1.672×10⁻²⁷ (kg)',
 
-  'R': 'Molar gas constant: 8.3 (J/mol×K)',
+  KJ: 'Josephson constant: 483597.84×10⁹ (Hz/V)',
 
-  'Ry': 'Rydberg constant: 10973731.568 (1/m)',
+  R: 'Molar gas constant: 8.3 (J/mol×K)',
 
-  'RK': 'Von Klitzing constant: 25812.807 (Ω)',
+  Ry: 'Rydberg constant: 10973731.568 (1/m)',
 
-  'g': 'Gravity of Earth: 9.81 (m/s²)', 
+  RK: 'Von Klitzing constant: 25812.807 (Ω)',
+
+  g: 'Gravity of Earth: 9.81 (m/s²)',
 
 };
 
 const showConstant = (par) => {
-  for (let key in constants) {
-    if (par === key) {
+  for (const key in constants) {
+    if (par === key.toString()) {
       return constants[key];
     }
   }
