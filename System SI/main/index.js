@@ -4,8 +4,6 @@ let activeSI = false;
 let activeconstants = false;
 let number = 0;
 let units = 0;
-let n;
-let u;
 
 const SI = require('./SIsystem.js');
 const constants = require('./constants.js');
@@ -25,29 +23,19 @@ bot.onText(/\/systemsi/, (msg) => {
   bot.sendMessage(chatId, 'Enter a value:');
 });
 
-const given = {};
-
 bot.on('message', (msg) => {
   const chatId = msg.chat.id;
 
   if (activeSI) {
-    const arr = [];
     if (number) {
-      units = msg;
-      n = number.text;
-      u = units.text;
-      arr.push(+n, u);
-      given.A = arr;
-      const givenSI = SI(given);
-      const answernumber = givenSI.A[0];
-      const answerunits = givenSI.A[1];
+      units = msg.text;
+      const answer = SI(+number, units);
       activeSI = false;
       number = 0;
       units = 0;
-      bot.sendMessage(chatId, 'Result: ' + answernumber + ' ' + answerunits);
+      bot.sendMessage(chatId, 'Result: ' + answer);
     } else {
-      number = msg;
-      arr.push(number);
+      number = msg.text;
       bot.sendMessage(chatId, 'Enter a unit:');
     }
   }

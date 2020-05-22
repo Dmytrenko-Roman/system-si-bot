@@ -1,59 +1,5 @@
 'use strict';
 
-/* let given = {
-
-  A: [1 * Math.pow(10, -21), 'ZJ'],
-
-  U: [1 * Math.pow(10, -18), 'EV'],
-
-  R: [1 * Math.pow(10, -15), 'POm'],
-
-  v: [1 * Math.pow(10, -12), 'THz'],
-
-  F: [1 * Math.pow(10, -9), 'GN'],
-
-  B: [1 * Math.pow(10, -6), 'MTl'],
-
-  m: [1, 'kg'],
-
-  l: [1, 'm'],
-
-  t: [1, 's'],
-
-  L: [1 * Math.pow(10, 2), 'cGn'],
-
-  d: [1 * Math.pow(10, 3), 'mm'],
-
-  // P: [1 * Math.pow(10, 6), 'mcW'], ?
-
-  λ: [1 * Math.pow(10, 9), 'nm'],
-
-  Φ: [1 * Math.pow(10, 12), 'pF'],
-
-  q: [1 * Math.pow(10, 15), 'fKl'],
-
-  V: [1 * Math.pow(10, 3), 'l'],
-
-  S: [1 * Math.pow(10, -12), 'Mm^2'],
-
-  a: [1, 'm/s^2'],
-
-  Sp: [1, 'm/s'],
-
-  V2: [1 * Math.pow(10, 9), 'mm^3'],
-
-  S2: [1, 'm^2'],
-
-  n: [1, 'mol'],
-
-  p1: [25, 'kgm/s'],
-
-  p2: [25, 'Mgm/s'],
-
-  Iv: [25, 'kd'],
-
-}; */
-
 const prefixes = {
 
   m: -3, // milli
@@ -89,34 +35,37 @@ const debug = {
 
 };
 
-const SI = function (info) {
-  for (const key in info) {
+const SI = function (value, unit) {
+  if (typeof value === 'number' && typeof unit === 'string') {
     for (const prefix in prefixes) {
-      if (info[key][1][0] === prefix.toString()) {
-        info[key][0] = info[key][0] * Math.pow(10, prefixes[prefix]);
-        info[key][1] = info[key][1].substr(1);
-        if (info[key][1].includes('m^2')) {
-          info[key][0] = info[key][0] * Math.pow(10, prefixes[prefix]);
+      if (unit[0] === prefix.toString()) {
+        value = value * Math.pow(10, prefixes[prefix]);
+        unit = unit.substr(1);
+        if (unit.includes('m^2')) {
+          value = value * Math.pow(10, prefixes[prefix]);
         }
-        if (info[key][1].includes('m^3')) {
-          info[key][0] = info[key][0] * Math.pow(Math.pow(10, prefixes[prefix]), 2);
+        if (unit.includes('m^3')) {
+          value = value * Math.pow(Math.pow(10, prefixes[prefix]), 2);
         }
       }
+    
     }
-
-    // Exceptions:
+  
+  // Exceptions:
 
     for (const k in debug) {
-      if (info[key][1] === k.toString()) {
-        info[key][0] = info[key][0] * Math.pow(10, debug[k][0]);
-        info[key][1] = debug[k][1];
+      if (unit === k.toString()) {
+        value = value * Math.pow(10, debug[k][0]);
+        unit = debug[k][1];
       }
     }
+    return (value + ' ' + unit).toString();
+  } else {
+    return 'Enter a number/a unit!'
   }
-  return info;
 };
 
-// const infoSI = SI(given);
+// const infoSI = SI(10, 'cGn');
 // console.log(infoSI);
 
 module.exports = SI;
