@@ -36,16 +36,16 @@ const debug = {
 };
 
 const SI = function (value, unit) {
-  if (typeof value === 'number' && typeof unit === 'string') {
+  if (!isNaN(value)) {
     for (const prefix in prefixes) {
       if (unit[0] === prefix.toString()) {
-        value = value * Math.pow(10, prefixes[prefix]);
+        value = value * 10 ** prefixes[prefix];
         unit = unit.substr(1);
         if (unit.includes('m^2')) {
-          value = value * Math.pow(10, prefixes[prefix]);
+          value = value * 10 ** prefixes[prefix];
         }
         if (unit.includes('m^3')) {
-          value = value * Math.pow(Math.pow(10, prefixes[prefix]), 2);
+          value = value * 10 ** (2 * prefixes[prefix]);
         }
       }
     
@@ -55,7 +55,7 @@ const SI = function (value, unit) {
 
     for (const k in debug) {
       if (unit === k.toString()) {
-        value = value * Math.pow(10, debug[k][0]);
+        value = value * 10 ** debug[k][0];
         unit = debug[k][1];
       }
     }
@@ -65,7 +65,7 @@ const SI = function (value, unit) {
   }
 };
 
-// const infoSI = SI(10, 'cGn');
+// const infoSI = SI(+'1', 'km^3');
 // console.log(infoSI);
 
 module.exports = SI;
