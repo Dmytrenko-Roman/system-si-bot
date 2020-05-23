@@ -28,15 +28,25 @@ bot.on('message', (msg) => {
 
   if (activeSI) {
     if (number) {
-      units = msg.text;
-      const answer = SI(+number, units);
-      activeSI = false;
-      number = 0;
-      units = 0;
-      bot.sendMessage(chatId, 'Result: ' + answer);
+      if (isNaN(number)) {
+        activeSI = false;
+        number = 0;
+        units = 0;
+      } else {
+        units = msg.text;
+        const answer = SI(+number, units);
+        activeSI = false;
+        number = 0;
+        units = 0;
+        bot.sendMessage(chatId, 'Result: ' + answer);
+      }
     } else {
       number = msg.text;
-      bot.sendMessage(chatId, 'Enter a unit:');
+      if (isNaN(number)) {
+        bot.sendMessage(chatId, 'Enter a number!');
+      } else {
+        bot.sendMessage(chatId, 'Enter a unit:');
+      }
     }
   }
 });
