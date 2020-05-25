@@ -36,6 +36,7 @@ const assert = require('assert').strict;
     [1, 'mol', '1 mol', 'SI System: mol'],
     [+'ss', 'mm', 'Enter a number/a unit!', 'SI System: value'],
     [10, + 'mm', 'Enter a number/a unit!', 'SI System: unit'],
+    [0, 'km', '0 m', 'SI System: 0'],
   ];
 
   console.log('------- SI System -------')
