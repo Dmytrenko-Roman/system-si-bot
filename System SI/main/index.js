@@ -9,7 +9,7 @@ const SI = require('./SIsystem.js');
 const constants = require('./constants.js');
 const text = require('./text.js');
 
-const TOKEN = '?';
+const TOKEN = process.env.TOKEN;
 
 const bot = new TelegramBot(TOKEN, {
   polling: true,
