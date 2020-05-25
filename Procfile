@@ -1,1 +1,1 @@
-web: node ./System SI/main/index.js
+web: node ./main/index.js

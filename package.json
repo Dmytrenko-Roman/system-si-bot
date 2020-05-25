@@ -4,10 +4,10 @@
   "description": "",
   "main": "SIsystem.js",
   "scripts": {
-    "start": "node ./System SI/main/index.js",
-    "dev": "nodemon ./System SI/main/index.js",
-    "lint": "eslint ./System SI/main",
-    "lint:fix": "eslint ./System SI/main --fix"
+    "start": "node ./main/index.js",
+    "dev": "nodemon ./main/index.js",
+    "lint": "eslint ./main",
+    "lint:fix": "eslint ./main --fix"
   },
   "author": "",
   "license": "ISC",
