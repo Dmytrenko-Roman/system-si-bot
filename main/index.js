@@ -10,7 +10,7 @@ const constants = require('./constants.js');
 const text = require('./text.js');
 
 const TOKEN = process.env.TOKEN;
-const url = process.env.APP_URL;
+const url = process.env.APP_URL || 'https://system-si.herokuapp.com/';
 
 const bot = new TelegramBot(TOKEN, {
   webHook: {
@@ -19,8 +19,6 @@ const bot = new TelegramBot(TOKEN, {
 });
 
 bot.setWebHook(`${url}/bot${TOKEN}`);
-
-
 
 // S-Y-S-T-E-M-S-I:
 
