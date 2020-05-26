@@ -68,11 +68,14 @@ const assert = require('assert').strict;
     ['μ0', 'Vacuum magnetic permeability: 1.256×10⁻⁶ (N/A²)', 'Constants: μ0'],
     ['me', 'Electron mass: 9.1×10⁻³¹ (kg)', 'Constants: me'],
     ['mp', 'Proton mass: 1.672×10⁻²⁷ (kg)', 'Constants: mp'],
+    ['mn', 'Neutron mass: 1.675×10⁻²⁷ (kg)', 'Constants: mn'],
     ['KJ', 'Josephson constant: 483597.84×10⁹ (Hz/V)', 'Constants: KJ'],
     ['R', 'Molar gas constant: 8.3 (J/mol×K)', 'Constants: R'],
     ['Ry', 'Rydberg constant: 10973731.568 (1/m)', 'Constants: Ry'],
     ['RK', 'Von Klitzing constant: 25812.807 (Ω)', 'Constants: RK'],
     ['g', 'Gravity of Earth: 9.81 (m/s²)', 'Constants: g'],
+    ['F', 'Faraday constant: 98485 (C/mol)', 'Constants: F'],
+    ['pa', 'Atmospheric pressure: 101325 (Pa)', 'Constants: pa'],
     ['r', undefined, 'Constants: invalid value'],
   ];
 

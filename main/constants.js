@@ -22,6 +22,8 @@ const constants = {
 
   mp: 'Proton mass: 1.672×10⁻²⁷ (kg)',
 
+  mn: 'Neutron mass: 1.675×10⁻²⁷ (kg)',
+
   KJ: 'Josephson constant: 483597.84×10⁹ (Hz/V)',
 
   R: 'Molar gas constant: 8.3 (J/mol×K)',
@@ -31,6 +33,10 @@ const constants = {
   RK: 'Von Klitzing constant: 25812.807 (Ω)',
 
   g: 'Gravity of Earth: 9.81 (m/s²)',
+  
+  F: 'Faraday constant: 98485 (C/mol)',
+
+  pa: 'Atmospheric pressure: 101325 (Pa)',
 
 };
 
