@@ -20,6 +20,11 @@ const bot = new TelegramBot(TOKEN, {
 
 bot.setWebHook(`${url}/bot${TOKEN}`);
 
+// For local:
+/* const bot = new TelegramBot (TOKEN, {
+  polling: true
+}) */
+
 // S-Y-S-T-E-M-S-I:
 
 bot.onText(/\/systemsi/, (msg) => {

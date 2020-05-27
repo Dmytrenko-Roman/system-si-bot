@@ -47,6 +47,10 @@ const SI = function (value, unit) {
         if (unit.includes('m^3')) {
           value = value * 10 ** (2 * prefixes[prefix]);
         }
+        if (unit.includes('m/h')) {
+          value = value * 10 ** (-3) / 3.6;
+          unit = 'm/s';
+        }
       }
     
     }
