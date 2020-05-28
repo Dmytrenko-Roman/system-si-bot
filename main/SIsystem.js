@@ -1,7 +1,6 @@
 'use strict';
 
 const prefixes = {
-
   m: -3, // milli
   Z: 21, // Zeta
   E: 18, // Exa
@@ -17,11 +16,9 @@ const prefixes = {
   p: -12, // pico
   f: -15, // femto
   a: -18, // atto
-
 };
 
 const debug = {
-
   'gm/s': [-3, 'kgm/s'],
   g: [-3, 'kg'],
   l: [-3, 'm^3'],
@@ -32,20 +29,20 @@ const debug = {
   '^2': [3, 'm^2'],
   d: [-3, 'kd'],
   ol: [3, 'mol'],
-
 };
 
 const SI = function (value, unit) {
   if (!isNaN(value)) {
-    for (const prefix in prefixes) {
+    for (const prefix of Object.keys(prefixes)) {
+      const p = prefixes[prefix];
       if (unit[0] === prefix.toString()) {
-        value = value * 10 ** prefixes[prefix];
+        value = value * 10 ** p;
         unit = unit.substr(1);
         if (unit.includes('m^2')) {
-          value = value * 10 ** prefixes[prefix];
+          value = value * 10 ** p;
         }
         if (unit.includes('m^3')) {
-          value = value * 10 ** (2 * prefixes[prefix]);
+          value = value * 10 ** (2 * p);
         }
         if (unit.includes('m/h')) {
           value = value * 10 ** (-3) / 3.6;

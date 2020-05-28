@@ -37,6 +37,8 @@ const assert = require('assert').strict;
     [+'ss', 'mm', 'Enter a number/a unit!', 'SI System: value'],
     [10, + 'mm', 'Enter a number/a unit!', 'SI System: unit'],
     [0, 'km', '0 m', 'SI System: 0'],
+    [1000, 'mGn', '1 Gn', 'SI System: mGn'],
+    [1000, 'mPa', '1 Pa', 'SI System: mPa'],
   ];
 
   console.log('------- SI System -------')
@@ -50,7 +52,7 @@ const assert = require('assert').strict;
       console.log(err);
     }
   };
-}
+};
 
 // Constants:
 
@@ -79,7 +81,7 @@ const assert = require('assert').strict;
     ['r', undefined, 'Constants: invalid value'],
   ];
 
-  console.log('------- Constants -------')
+  console.log('------- Constants -------');
   
   for (const test of tests) {
     const [par, expected, name] = test;
@@ -90,4 +92,4 @@ const assert = require('assert').strict;
       console.log(err);
     }
   };
-}
+};
