@@ -1,7 +1,6 @@
 'use strict';
 
 const prefixes = {
-  m: -3, // milli
   Z: 21, // Zeta
   E: 18, // Exa
   P: 15, // Peta
@@ -12,6 +11,7 @@ const prefixes = {
   h: 2, // hecto
   d: -1, // deci
   c: -2, // centi
+  m: -3, // milli
   n: -9, // nano
   p: -12, // pico
   f: -15, // femto
@@ -38,6 +38,7 @@ const SI = function(value, unit) {
       if (unit[0] === prefix.toString()) {
         value *= 10 ** p;
         unit = unit.substr(1);
+        
         if (unit.includes('m^2')) {
           value *= 10 ** p;
         }
@@ -49,7 +50,6 @@ const SI = function(value, unit) {
           unit = 'm/s';
         }
       }
-
     }
 
     // Exceptions:
@@ -66,7 +66,7 @@ const SI = function(value, unit) {
   }
 };
 
-// const infoSI = SI(+'1', 'km^3');
+// const infoSI = SI(1, 'cm');
 // console.log(infoSI);
 
 module.exports = SI;

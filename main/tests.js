@@ -37,8 +37,15 @@ const assert = require('assert').strict;
     [+'ss', 'mm', 'Enter a number/a unit!', 'SI System: value'],
     [10, +'mm', 'Enter a number/a unit!', 'SI System: unit'],
     [0, 'km', '0 m', 'SI System: 0'],
-    [1000, 'mGn', '1 Gn', 'SI System: mGn'],
-    [1000, 'mPa', '1 Pa', 'SI System: mPa'],
+    [1, 'Gn', '1 Gn', 'SI System: Gn'],
+    [1, 'Pa', '1 Pa', 'SI System: Pa'],
+    [1, 'Tl', '1 Tl', 'SI System: Tl'],
+    [1, 'kTl', '1000 Tl', 'SI System: kTl'],
+    [1, 'ETl', '1000000000000000000 Tl', 'SI System: ETl'],
+    [1, 'kGn', '1000 Gn', 'SI System: kGn'],
+    [1, 'EGn', '1000000000000000000 Gn', 'SI System: EGn'],
+    [1, 'kPa', '1000 Pa', 'SI System: kPa'],
+    [1, 'EPa', '1000000000000000000 Pa', 'SI System: EPa'],
   ];
 
   console.log('------- SI System -------');
