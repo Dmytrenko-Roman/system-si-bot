@@ -31,38 +31,38 @@ const debug = {
   ol: [3, 'mol'],
 };
 
-const SI = function (value, unit) {
+const SI = function(value, unit) {
   if (!isNaN(value)) {
     for (const prefix of Object.keys(prefixes)) {
       const p = prefixes[prefix];
       if (unit[0] === prefix.toString()) {
-        value = value * 10 ** p;
+        value *= 10 ** p;
         unit = unit.substr(1);
         if (unit.includes('m^2')) {
-          value = value * 10 ** p;
+          value *= 10 ** p;
         }
         if (unit.includes('m^3')) {
-          value = value * 10 ** (2 * p);
+          value *= 10 ** (2 * p);
         }
         if (unit.includes('m/h')) {
-          value = value * 10 ** (-3) / 3.6;
+          value *= 10 ** (-3) / 3.6;
           unit = 'm/s';
         }
       }
-    
+
     }
-  
-  // Exceptions:
+
+    // Exceptions:
 
     for (const k in debug) {
       if (unit === k.toString()) {
-        value = value * 10 ** debug[k][0];
+        value *= 10 ** debug[k][0];
         unit = debug[k][1];
       }
     }
     return (value + ' ' + unit).toString();
   } else {
-    return 'Enter a number/a unit!'
+    return 'Enter a number/a unit!';
   }
 };
 

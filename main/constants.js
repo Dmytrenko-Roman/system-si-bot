@@ -21,7 +21,7 @@ const constants = {
   pa: 'Atmospheric pressure: 101325 (Pa)',
 };
 
-const showConstant = (par) => {
+const showConstant = par => {
   for (const key in constants) {
     if (par === key.toString()) {
       return constants[key];

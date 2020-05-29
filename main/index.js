@@ -1,6 +1,8 @@
+'use strict';
+
 const TelegramBot = require('node-telegram-bot-api');
 
-let info = {
+const info = {
   activeSI: false,
   activeconstants: false,
   number: 0,
@@ -11,10 +13,10 @@ const SI = require('./SIsystem.js');
 const constants = require('./constants.js');
 const text = require('./text.js');
 
-const TOKEN = process.env.TOKEN;
+const TOKEN = '1187295605:AAEBKBqKt45VvM1rJdL1PXMATo6jyMCG5tA';
 
 // process.env.TOKEN;
-const url = process.env.APP_URL || 'https://system-si.herokuapp.com/';
+/* const url = process.env.APP_URL || 'https://system-si.herokuapp.com/';
 
 const bot = new TelegramBot(TOKEN, {
   webHook: {
@@ -22,12 +24,10 @@ const bot = new TelegramBot(TOKEN, {
   }
 });
 
-bot.setWebHook(`${url}/bot${TOKEN}`);
+bot.setWebHook(`${url}/bot${TOKEN}`); */
 
 // For local:
-/* const bot = new TelegramBot (TOKEN, {
-  polling: true
-}) */
+const bot = new TelegramBot(TOKEN, { polling: true });
 
 // S-Y-S-T-E-M-S-I:
 
@@ -48,7 +48,7 @@ bot.on('message', msg => {
         info.units = 0;
       } else {
         info.units = msg.text;
-        const answer = SI(+ info.number, info.units);
+        const answer = SI(+info.number, info.units);
         info.activeSI = false;
         info.number = 0;
         info.units = 0;

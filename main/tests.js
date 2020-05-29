@@ -4,7 +4,7 @@ const assert = require('assert').strict;
 
 // SI System:
 
-{ 
+{
   const fn = require('./SIsystem.js');
 
   const tests = [
@@ -35,13 +35,13 @@ const assert = require('assert').strict;
     [1, 'kd', '1 kd', 'SI System: kd'],
     [1, 'mol', '1 mol', 'SI System: mol'],
     [+'ss', 'mm', 'Enter a number/a unit!', 'SI System: value'],
-    [10, + 'mm', 'Enter a number/a unit!', 'SI System: unit'],
+    [10, +'mm', 'Enter a number/a unit!', 'SI System: unit'],
     [0, 'km', '0 m', 'SI System: 0'],
     [1000, 'mGn', '1 Gn', 'SI System: mGn'],
     [1000, 'mPa', '1 Pa', 'SI System: mPa'],
   ];
 
-  console.log('------- SI System -------')
+  console.log('------- SI System -------');
 
   for (const test of tests) {
     const [par1, par2, expected, name] = test;
@@ -51,8 +51,8 @@ const assert = require('assert').strict;
     } catch (err) {
       console.log(err);
     }
-  };
-};
+  }
+}
 
 // Constants:
 
@@ -61,7 +61,7 @@ const assert = require('assert').strict;
 
   const tests = [
     ['Na', 'Avogadro constant: 6.022×10⁻²³ (1/Mol)', 'Constants: Na'],
-    ['k','Bolzmann constant: 1.38×10⁻²³ (J/K)', 'Constants: k'],
+    ['k', 'Bolzmann constant: 1.38×10⁻²³ (J/K)', 'Constants: k'],
     ['e', 'Elementary charge: 1.602×10⁻¹⁹ (C)', 'Constants: e'],
     ['G', 'Newtonian constant of gravitation: 6.67×10⁻¹¹ (m³/kg×s²)', 'Constants: G'],
     ['h', 'Planck constant: 6.626×10⁻³⁴ (J×s)', 'Constants: h'],
@@ -82,7 +82,7 @@ const assert = require('assert').strict;
   ];
 
   console.log('------- Constants -------');
-  
+
   for (const test of tests) {
     const [par, expected, name] = test;
     const result = fn(par);
@@ -91,5 +91,5 @@ const assert = require('assert').strict;
     } catch (err) {
       console.log(err);
     }
-  };
-};
+  }
+}
