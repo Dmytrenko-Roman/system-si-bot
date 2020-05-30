@@ -53,7 +53,7 @@ const SI = function(value, unit) {
       const p = prefixes[prefix];
       if (unit[0] === prefix.toString()) {
         value *= 10 ** p;
-        unit = unit.substr(1);        
+        unit = unit.substr(1);
         if (unit.includes('m^2')) {
           value *= 10 ** p;
         }
