@@ -31,14 +31,25 @@ const debug = {
   ol: [3, 'mol'],
 };
 
+const fix = {
+  Pa: '1',
+  Gn: '2',
+  Tl: '3',
+  kd: '4',
+};
+
 const SI = function(value, unit) {
   if (!isNaN(value)) {
+    for (const f of Object.keys(fix)) {
+      if (unit === f.toString()) {
+        unit = fix[f];
+      }
+    }
     for (const prefix of Object.keys(prefixes)) {
       const p = prefixes[prefix];
       if (unit[0] === prefix.toString()) {
         value *= 10 ** p;
-        unit = unit.substr(1);
-        
+        unit = unit.substr(1);        
         if (unit.includes('m^2')) {
           value *= 10 ** p;
         }
@@ -60,13 +71,18 @@ const SI = function(value, unit) {
         unit = debug[k][1];
       }
     }
+    for (const f of Object.keys(fix)) {
+      if (unit === fix[f]) {
+        unit = f.toString();
+      }
+    }
     return (value + ' ' + unit).toString();
   } else {
     return 'Enter a number/a unit!';
   }
 };
 
-// const infoSI = SI(1, 'cm');
+// const infoSI = SI(1, 'l');
 // console.log(infoSI);
 
 module.exports = SI;

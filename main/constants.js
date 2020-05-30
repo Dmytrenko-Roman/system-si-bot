@@ -29,6 +29,6 @@ const showConstant = par => {
   }
 };
 
-console.log(showConstant('c'));
+// console.log(showConstant('c'));
 
 module.exports = showConstant;
