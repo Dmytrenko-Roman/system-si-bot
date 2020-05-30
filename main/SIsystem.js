@@ -45,6 +45,10 @@ const SI = function(value, unit) {
         unit = fix[f];
       }
     }
+    if (unit === '°C') {
+      value += 273;
+      unit = 'K';
+    }
     for (const prefix of Object.keys(prefixes)) {
       const p = prefixes[prefix];
       if (unit[0] === prefix.toString()) {
@@ -82,7 +86,7 @@ const SI = function(value, unit) {
   }
 };
 
-// const infoSI = SI(1, 'l');
+// const infoSI = SI(27, '°C');
 // console.log(infoSI);
 
 module.exports = SI;

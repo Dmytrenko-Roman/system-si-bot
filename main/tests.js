@@ -46,6 +46,7 @@ const assert = require('assert').strict;
     [1, 'EGn', '1000000000000000000 Gn', 'SI System: EGn'],
     [1, 'kPa', '1000 Pa', 'SI System: kPa'],
     [1, 'EPa', '1000000000000000000 Pa', 'SI System: EPa'],
+    [0, '°C', '273 K', 'SI System: °C'],
   ];
 
   console.log('------- SI System -------');
@@ -85,6 +86,12 @@ const assert = require('assert').strict;
     ['g', 'Gravity of Earth: 9.81 (m/s²)', 'Constants: g'],
     ['F', 'Faraday constant: 98485 (C/mol)', 'Constants: F'],
     ['pa', 'Atmospheric pressure: 101325 (Pa)', 'Constants: pa'],
+    ['lp', 'Planck length: 1.616×10⁻³⁵ (m)', 'Constants: lp'],
+    ['Mp', 'Planck mass: 2.176×10⁻⁸ (kg)', 'Constants: mp'],
+    ['tp', 'Planck time: 5.391×10⁻⁴⁴ (s)', 'Constants: tp'],
+    ['Tp', 'Planck temperature: 1.416×10³² (K)', 'Constants: Tp'],
+    ['qp', 'Planck charge: 1.875×10⁻¹⁸ (C)', 'Constants: qp'],
+    ['Ep', 'Planck energy: 1.9561×10⁹ (J)', 'Constants: Ep'],
     ['r', undefined, 'Constants: invalid value'],
   ];
 

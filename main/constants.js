@@ -19,6 +19,12 @@ const constants = {
   g: 'Gravity of Earth: 9.81 (m/s²)',
   F: 'Faraday constant: 98485 (C/mol)',
   pa: 'Atmospheric pressure: 101325 (Pa)',
+  lp: 'Planck length: 1.616×10⁻³⁵ (m)',
+  Mp: 'Planck mass: 2.176×10⁻⁸ (kg)',
+  tp: 'Planck time: 5.391×10⁻⁴⁴ (s)',
+  Tp: 'Planck temperature: 1.416×10³² (K)',
+  qp: 'Planck charge: 1.875×10⁻¹⁸ (C)',
+  Ep: 'Planck energy: 1.9561×10⁹ (J)',
 };
 
 const showConstant = par => {
