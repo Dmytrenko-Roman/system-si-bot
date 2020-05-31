@@ -28,13 +28,13 @@ const constants = {
 };
 
 const showConstant = par => {
-  for (const key in constants) {
+  for (const key of Object.keys(constants)) {
     if (par === key.toString()) {
       return constants[key];
-    }
+    } 
   }
 };
 
-// console.log(showConstant('c'));
+// console.log(showConstant('Na'));
 
 module.exports = showConstant;

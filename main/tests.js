@@ -102,7 +102,7 @@ const assert = require('assert').strict;
     ['Tp', 'Planck temperature: 1.416×10³² (K)', 'Constants: Tp'],
     ['qp', 'Planck charge: 1.875×10⁻¹⁸ (C)', 'Constants: qp'],
     ['Ep', 'Planck energy: 1.9561×10⁹ (J)', 'Constants: Ep'],
-    ['r', undefined, 'Constants: invalid value'],
+    ['r', 'Enter a constant!', 'Constants: invalid value'],
   ];
 
   console.log('------- Constants -------');
