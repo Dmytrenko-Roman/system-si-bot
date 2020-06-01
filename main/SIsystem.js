@@ -29,6 +29,10 @@ const debug = {
   '^2': [3, 'm^2'],
   d: [-3, 'kd'],
   ol: [3, 'mol'],
+  1: [0, 'Pa'],
+  2: [0, 'Gn'],
+  3: [0, 'Tl'],
+  4: [0, 'kd'],
 };
 
 const fix = {
@@ -48,6 +52,10 @@ const SI = function(value, unit) {
     if (unit === '°C') {
       value += 273;
       unit = 'K';
+    }
+    if (unit === 'h') {
+      value *= 60;
+      unit = 's';
     }
     for (const prefix of Object.keys(prefixes)) {
       const p = prefixes[prefix];
@@ -75,18 +83,13 @@ const SI = function(value, unit) {
         unit = debug[k][1];
       }
     }
-    for (const f of Object.keys(fix)) {
-      if (unit === fix[f]) {
-        unit = f.toString();
-      }
-    }
     return (value + ' ' + unit).toString();
   } else {
     return 'Enter a number/a unit!';
   }
 };
 
-// const infoSI = SI(27, '°C');
+// const infoSI = SI(2, 'h');
 // console.log(infoSI);
 
 module.exports = SI;

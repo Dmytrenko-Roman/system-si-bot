@@ -31,7 +31,7 @@ const showConstant = par => {
   for (const key of Object.keys(constants)) {
     if (par === key.toString()) {
       return constants[key];
-    } 
+    }
   }
 };
 
