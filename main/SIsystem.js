@@ -1,7 +1,6 @@
 'use strict';
 
 const prefixes = {
-  Z: 21, // Zeta
   E: 18, // Exa
   P: 15, // Peta
   T: 12, // Tera
@@ -43,7 +42,7 @@ const fix = {
 };
 
 const SI = function(value, unit) {
-  if (!isNaN(value)) {
+  if (!isNaN(value) && isNaN(+unit)) {
     for (const f of Object.keys(fix)) {
       if (unit === f.toString()) {
         unit = fix[f];
@@ -56,6 +55,11 @@ const SI = function(value, unit) {
     if (unit === 'h') {
       value *= 60;
       unit = 's';
+    }
+    if (unit.toString().includes('mc')) {
+      value *= 10 ** (-6);
+      unit = unit.substr(1);
+      unit = unit.substr(1);
     }
     for (const prefix of Object.keys(prefixes)) {
       const p = prefixes[prefix];
@@ -75,7 +79,7 @@ const SI = function(value, unit) {
       }
     }
 
-    // Exceptions:
+    // Debug:
 
     for (const k in debug) {
       if (unit === k.toString()) {
@@ -89,7 +93,7 @@ const SI = function(value, unit) {
   }
 };
 
-// const infoSI = SI(2, 'h');
+// const infoSI = SI(2000000, '1');
 // console.log(infoSI);
 
 module.exports = SI;

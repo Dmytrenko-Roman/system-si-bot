@@ -8,7 +8,6 @@ const assert = require('assert').strict;
   const fn = require('./SIsystem.js');
 
   const tests = [
-    [1 * 10 ** (-21), 'Zm', '1 m', 'SI System: Z'],
     [1 * 10 ** (-18), 'Em', '1 m', 'SI System: E'],
     [1 * 10 ** (-15), 'Pm', '1 m', 'SI System: P'],
     [1 * 10 ** (-12), 'Tm', '1 m', 'SI System: T'],
@@ -35,7 +34,7 @@ const assert = require('assert').strict;
     [1, 'kd', '1 kd', 'SI System: kd'],
     [1, 'mol', '1 mol', 'SI System: mol'],
     [+'ss', 'mm', 'Enter a number/a unit!', 'SI System: value'],
-    [10, +'mm', 'Enter a number/a unit!', 'SI System: unit'],
+    [10, +'1', 'Enter a number/a unit!', 'SI System: unit'],
     [0, 'km', '0 m', 'SI System: 0'],
     [1, 'Gn', '1 Gn', 'SI System: Gn'],
     [1, 'Pa', '1 Pa', 'SI System: Pa'],
