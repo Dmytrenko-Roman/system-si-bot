@@ -55,7 +55,7 @@ bot.on('message', msg => {
       }
     } else {
       info.number = msg.text;
-      const check = isNaN(info.number) ? 'Enter a number!' : 'Enter a unit:';
+      const check = isNaN(info.number) ? 'Result: Enter a number!' : 'Enter a unit:';
       bot.sendMessage(chatId, check);
     }
   }

@@ -53,7 +53,7 @@ const SI = function(value, unit) {
       unit = 'K';
     }
     if (unit === 'h') {
-      value *= 60;
+      value *= 3600;
       unit = 's';
     }
     if (unit.toString().includes('mc')) {
@@ -88,8 +88,8 @@ const SI = function(value, unit) {
       }
     }
     return (value + ' ' + unit).toString();
-  } else {
-    return 'Enter a number/a unit!';
+    } else {
+    return 'Enter a unit!';
   }
 };
 

@@ -46,7 +46,7 @@ const assert = require('assert').strict;
     [1, 'kPa', '1000 Pa', 'SI System: kPa'],
     [1, 'EPa', '1000000000000000000 Pa', 'SI System: EPa'],
     [0, '°C', '273 K', 'SI System: °C'],
-    [1, 'h', '60 s', 'SI System: h (about time)'],
+    [1, 'h', '3600 s', 'SI System: h (about time)'],
   ];
 
   console.log('------- SI System -------');
