@@ -88,7 +88,7 @@ const SI = function(value, unit) {
       }
     }
     return (value + ' ' + unit).toString();
-    } else {
+  } else {
     return 'Enter a unit!';
   }
 };
