@@ -32,6 +32,9 @@ const showConstant = par => {
     if (par === key.toString()) {
       return constants[key];
     }
+    if (constants[par.toString()] === undefined) {
+      return 'Enter a constant!';
+    }
   }
 };
 
