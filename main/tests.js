@@ -33,7 +33,6 @@ const assert = require('assert').strict;
     [1, 'm^2', '1 m^2', 'SI System: m^2'],
     [1, 'kd', '1 kd', 'SI System: kd'],
     [1, 'mol', '1 mol', 'SI System: mol'],
-    [+'ss', 'mm', 'Enter a value!', 'SI System: value'],
     [10, +'1', 'Enter a unit!', 'SI System: unit'],
     [0, 'km', '0 m', 'SI System: 0'],
     [1, 'Gn', '1 Gn', 'SI System: Gn'],

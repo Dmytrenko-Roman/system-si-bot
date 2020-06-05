@@ -42,7 +42,7 @@ const fix = {
 };
 
 const SI = function(value, unit) {
-  if (!isNaN(value) && isNaN(+unit)) {
+  if (isNaN(+unit)) {
     for (const f of Object.keys(fix)) {
       if (unit === f.toString()) {
         unit = fix[f];
