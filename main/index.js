@@ -3,10 +3,10 @@
 const TelegramBot = require('node-telegram-bot-api');
 
 const info = {
-  activeSI: false,
+  activesi: false,
   activeconstants: false,
-  number: 0,
-  units: 0,
+  value: 0,
+  unit: 0,
 };
 
 const SI = require('./SIsystem.js');
@@ -32,30 +32,30 @@ bot.setWebHook(`${url}/bot${TOKEN}`);
 
 bot.onText(/\/systemsi/, msg => {
   const chatId = msg.chat.id;
-  info.activeSI = true;
+  info.activesi = true;
   bot.sendMessage(chatId, 'Enter a value:');
 });
 
 bot.on('message', msg => {
   const chatId = msg.chat.id;
 
-  if (info.activeSI) {
-    if (info.number) {
-      if (isNaN(info.number)) {
-        info.activeSI = false;
-        info.number = 0;
-        info.units = 0;
+  if (info.activesi) {
+    if (info.value) {
+      if (isNaN(info.value)) {
+        info.activesi = false;
+        info.value = 0;
+        info.unit = 0;
       } else {
-        info.units = msg.text;
-        const answer = SI(+info.number, info.units);
-        info.activeSI = false;
-        info.number = 0;
-        info.units = 0;
-        bot.sendMessage(chatId, 'Result: ' + answer);
+        info.unit = msg.text;
+        const answer = SI(+info.value, info.unit);
+        info.activesi = false;
+        info.value = 0;
+        info.unit = 0;
+        bot.sendMessage(chatId, `Result: ${answer}`);
       }
     } else {
-      info.number = msg.text;
-      const check = isNaN(info.number) ?
+      info.value = msg.text;
+      const check = isNaN(info.value) ?
         'Result: Enter a number!' : 'Enter a unit:';
       bot.sendMessage(chatId, check);
     }

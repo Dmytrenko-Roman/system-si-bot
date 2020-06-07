@@ -41,7 +41,7 @@ const fix = {
   kd: '4',
 };
 
-const SI = function(value, unit) {
+const si = function(value, unit) {
   if (isNaN(+unit)) {
     for (const f of Object.keys(fix)) {
       if (unit === f.toString()) {
@@ -87,7 +87,7 @@ const SI = function(value, unit) {
         unit = debug[k][1];
       }
     }
-    return (value + ' ' + unit).toString();
+    return `${value} ${unit}`;
   } else {
     return 'Enter a unit!';
   }
@@ -96,4 +96,4 @@ const SI = function(value, unit) {
 // const infoSI = SI(2000000, '1');
 // console.log(infoSI);
 
-module.exports = SI;
+module.exports = si;

@@ -47,7 +47,7 @@ const assert = require('assert').strict;
     [0, 'mA', '0 A', 'SI System: zero value'],
   ];
 
-  console.log('------- SI System -------');
+  console.log('SI System:');
 
   const obj = {
     p: 0,
@@ -67,7 +67,7 @@ const assert = require('assert').strict;
       obj.f++;
     }
   }
-  console.log('Result:', obj.t + ' tests', obj.p + ' passed', obj.f + ' failed');
+  console.log(`Result: ${obj.t} tests, ${obj.p} passed, ${obj.f} failed`);
 }
 
 // Constants:
@@ -103,7 +103,7 @@ const assert = require('assert').strict;
     ['r', 'Enter a constant!', 'Constants: invalid value'],
   ];
 
-  console.log('------- Constants -------');
+  console.log('Constants:');
 
   const obj = {
     p: 0,
@@ -123,5 +123,5 @@ const assert = require('assert').strict;
       obj.f++;
     }
   }
-  console.log('Result:', obj.t + ' tests', obj.p + ' passed', obj.f + ' failed');
+  console.log(`Result: ${obj.t} tests, ${obj.p} passed, ${obj.f} failed`);
 }
