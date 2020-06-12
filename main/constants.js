@@ -29,10 +29,10 @@ const constants = {
 
 const showConstant = par => {
   for (const key of Object.keys(constants)) {
-    if (par === key.toString()) {
+    if (par === key) {
       return constants[key];
     }
-    if (constants[par.toString()] === undefined) {
+    if (constants[par] === undefined) {
       return 'Enter a constant!';
     }
   }
