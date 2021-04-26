@@ -8,14 +8,14 @@ The SI system is powered by code written in the [SIsystem.js](https://github.com
 # Application examples:
 Instructions:
 
-![](https://github.com/Dmytrenko-Roman/gif/blob/master/instructions.gif)
+![](https://github.com/Dmytrenko-Roman/pictures-gifs/blob/main/gifs/instructions.ForSystemSIREADME.gif)
 
 SI system:
 
-![](https://github.com/Dmytrenko-Roman/gif/blob/master/system.gif)
+![](https://github.com/Dmytrenko-Roman/pictures-gifs/blob/main/gifs/system.ForSystemSIREADME.gif)
 
 Constants:
 
-![](https://github.com/Dmytrenko-Roman/gif/blob/master/constants.gif)
+![](https://github.com/Dmytrenko-Roman/pictures-gifs/blob/main/gifs/constants.ForSystemSIREADME.gif)
 # Motivation: 
 I wanted to create a project in which I could apply my knowledge not only in programming, but also in physics, since it is also interesting to me. The idea to create a bot that will work effectively with the SI system came to me recently. Often at school I had difficulty with tasks that required using this system and made stupid mistakes. But now I can be calm, because I have such a bot at hand. If we talk about the constants, which I also decided to add to the bot, then everything is pretty simple. Often, solving a problem, I came across an unknown constant in the formula. I did not know either its name or its value. I think such problems arose not only for me. The bot is designed to fix this problem. After all, now it’s enough just to know the letter, which designates a constant. In short, I wanted to help people solve physical problems by applying my programming knowledge.
