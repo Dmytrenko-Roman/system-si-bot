@@ -57,20 +57,20 @@ const si = function(value, unit) {
       unit = 's';
     }
     if (unit.toString().includes('mc')) {
-      value *= 10 ** (-6);
+      value += "10^(-6)";
       unit = unit.substr(1);
       unit = unit.substr(1);
     }
     for (const prefix of Object.keys(prefixes)) {
       const p = prefixes[prefix];
       if (unit[0] === prefix.toString()) {
-        value *= 10 ** p;
+        value += `10^(${p})`;
         unit = unit.substr(1);
         if (unit.includes('m^2')) {
-          value *= 10 ** p;
+          value += `10^(${p})`;
         }
         if (unit.includes('m^3')) {
-          value *= 10 ** (2 * p);
+          value += `10^(${2 * p})`;
         }
         if (unit.includes('m/h')) {
           value *= 10 ** (-3) / 3.6;
